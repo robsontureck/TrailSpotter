@@ -1,0 +1,59 @@
+<body>
+    <div class="alert alert-light text-center">
+        <strong>Not the city were you looking for? </strong><a href="/" class="alert-link">Go back to the home page</a>.
+    </div>
+
+    <div>
+        <h4 class="text-center">or<br><br>Search another city!</h4>
+    </div>
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-md-6">
+                <div class="input-group">
+                    <input type="text" id="cityName" class="form-control" placeholder="City, State" aria-label="Search"
+                        aria-describedby="basic-addon2">
+                    <div class="input-group-append">
+                        <button id='fetchButton' class="btn btn-secondary">Search</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <div id="trailDataContainer" class="container mt-5">
+        <h2 class="text-center mb-4"><strong>Displaying {{trails.length}} trails near {{city}} - {{state}}</strong></h2>
+        <div class="row">
+            {{#each trails}}
+            <div class="col-md-6 col-lg-4 mb-4">
+                <div class="card trail-card " data-lat="{{this.lat}}" data-lon="{{this.lon}}">
+
+                    <div class="card-header">{{this.name}}</div>
+                    <div class="card-body">
+
+                        <p style="font-weight: bold;">{{this.mode}}</p>
+                        <p><span style="font-weight: bold;">Length:</span>
+                            {{this.distanceKms}} km</p>
+                        <p><span style="font-weight: bold;">Terrain:</span>
+                            {{this.terrain}}</p>
+
+                        <div class="button-container">
+                            <a href="{{this.externalLink}}" class="btn btn-primary btn-custom" target="_blank">More
+                                Info</a>
+                            <button id='resultsButton'
+                                class="btn btn-secondary send-location-btn btn-spacing fetch-google-places-btn"
+                                data-lat="{{this.lat}}" data-lon="{{this.lon}}">
+                                Check Places and Events Near
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            {{/each}}
+        </div>
+    </div>
+
+    <script src="/javascripts/index.js"></script>
+
+
+</body>

@@ -1,0 +1,35 @@
+<body>
+    <style>
+        /* Define a container to center its children */
+        .container {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            /* Vertically center the content */
+            align-items: center;
+            /* Horizontally center the content */
+            height: 100vh;
+            /* Set the container height to the viewport height */
+        }
+
+        /* Additional styles for the content */
+        .text-center {
+            text-align: center;
+        }
+    </style>
+
+    <div class="container">
+        <h1>Oops! The page was not found!<br></h1>
+        <h4><strong><br> But you can go ahead and search the city you want to find a trail!</strong></h4>
+        <div class="input-group mb-3">
+            <input type="text" id="cityName" class="form-control" placeholder="City, State" aria-label="Search"
+                aria-describedby="basic-addon2">
+            <div class="input-group-append">
+                <button id='fetchButton' class="btn btn-secondary">Search</button>
+            </div>
+        </div>
+
+    </div>
+
+    <script src="/javascripts/index.js"></script>
+</body>
